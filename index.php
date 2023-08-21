@@ -29,7 +29,7 @@
             Separare evenutali secondi nomi o cognomi da spazi.';
         }
 
-        if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[@#$%^&+=!])(.{3})\1{1,}.{2,}$/i', $password)) {
+        if (!preg_match("/((?=.[a-z])(?=.[0-9])(?=.*[^a-zA-Z0-9]).{3})/i", $password)) {
             $messaggioErrore['password'] = 'La password deve essere formata da due gruppi di tre caratteri che si ripetono. <br>
              Ogni gruppo dovrà avere al suo interno obbligatoriamente un numero, una lettera e un carattere speciale. Non importa l\'ordine.<br>
              Deve avere una lunghezza di minimo 8 caratteri.';
